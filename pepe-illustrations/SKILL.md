@@ -1,13 +1,13 @@
 ---
 name: pepe-illustrations
-description: Draw hand-sketched, slightly absurd 16:9 explainer illustrations starring Pepe the frog, for articles, posts, docs, and "how does this work" explanations. Use when the user asks for an illustration, explainer drawing, article image, shot list, or "a Pepe drawing of how X works", or asks to fix or iterate on one. Claude draws each picture itself as a detailed SVG and renders it to PNG. Image-generation tools (Canva, image_gen, etc.) are a fallback only.
+description: Draw hand-sketched, slightly absurd 16:9 explainer illustrations starring Pepe the frog as an Imperial officer, for articles, posts, docs, and "how does this work" explanations. Use when the user asks for an illustration, explainer drawing, article image, shot list, or "a Pepe drawing of how X works", or asks to fix or iterate on one. Claude draws each picture itself as a detailed SVG and renders it to PNG. Image-generation tools (Canva, image_gen, etc.) are a fallback only.
 ---
 
 # Pepe explainer illustrations
 
 ## What this is
 
-Turn one key idea from an article or explanation (a judgment, a flow, a structure, a state, a metaphor) into a single 16:9 hand-drawn explainer picture: white paper, black pen lines, sparse red, orange and blue handwritten notes, lots of empty space, and **Pepe** doing the strange-but-logical work that makes the idea click.
+Turn one key idea from an article or explanation (a judgment, a flow, a structure, a state, a metaphor) into a single 16:9 hand-drawn explainer picture: white paper, black pen lines, sparse red, orange and blue handwritten notes, lots of empty space, and **Pepe** (as a deadpan Imperial officer: black uniform, cape, cap, frown) doing the strange-but-logical work that makes the idea click.
 
 Not a commercial illustration, not a PPT infographic, not a cute cartoon. It should look like a thoughtful product person sketched it on white paper to explain one thing.
 
@@ -29,7 +29,7 @@ The reference pictures in `assets/examples/` (the original artist's work, with a
 
 - **Props are built, not labelled.** A well has individual bricks and an inner wall. A suitcase has straps, buckles, stitching, wheels and a zipper with teeth. A machine has bolts, vents and a dial. A rectangle with a word in it is not a prop.
 - **Contents have contents.** Every paper, card or screen inside the scene carries tiny marks: text lines, an icon, a code bracket, a little chart.
-- **Pepe is reposed for the action.** Never paste the base standing pose unchanged. Redraw the arms and legs so he's actually pulling, pushing, sitting on or carrying the thing.
+- **Pepe is the exact traced asset**, `assets/pepe/pepe-officer.svg`, placed so the action depends on him (standing on the lid, guarding the gate, inspecting the leak). Only when an action truly needs his hands do you draw him in another pose, and then every item on the identity checklist in `pepe-ip.md` must be there.
 - **Story details.** At least one or two small touches that reward a second look: a luggage tag, a sticker, a stray sheet on the floor, sweat drops, strain marks.
 - **Multiple passes.** Render, look, write down what's weak, fix it, then render again. Delivering the first render is never acceptable.
 
@@ -40,7 +40,7 @@ The reference pictures in `assets/examples/` (the original artist's work, with a
 Don't load everything at once:
 
 - `references/svg-drawing-guide.md`: **always read before drawing.** Canvas, pen, fonts, layering, the detail floor, the render-and-review loop.
-- `references/pepe-ip.md`: **always read before drawing.** Pepe's look, personality, how to place and repose the asset.
+- `references/pepe-ip.md`: **always read before drawing.** Pepe's look (identity checklist), personality, how to place the asset, other poses.
 - `references/style-dna.md`: style, palette, text rules, hard noes.
 - `references/composition-patterns.md`: structure types, how to invent a fresh metaphor, what not to copy.
 - `references/qa-checklist.md`: checks before delivery and how to iterate.
@@ -77,7 +77,7 @@ Default 4-8 pictures for an article. 1-3 for a short piece. Rarely more than 9.
 When the user asks you to draw, generate, or make the pictures, don't stop to confirm. Draw each one as its own SVG; never put several pictures in one canvas.
 
 For each picture:
-1. Pick the metaphor and sketch the plan in your head: where Pepe is, what he's doing, the main prop, how information flows, the 3-6 labels.
+1. Pick the metaphor and sketch the plan in your head: where Pepe is, what he's doing, the main prop, how information flows, the 3-6 labels. Copy `assets/pepe/pepe-officer.svg` into the output folder next to the scene.
 2. Write the SVG following `references/svg-drawing-guide.md`.
 3. Render: `node scripts/render.mjs <scene.svg> <scene.png>`.
 4. Look at the PNG (and a 2x crop of the busiest area). Write down at least three specific weaknesses.

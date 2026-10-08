@@ -6,7 +6,7 @@ Run this on every picture before delivering it, whether Claude drew it or an ima
 
 - 16:9 landscape (SVG viewBox `0 0 1600 900`).
 - Clean white background.
-- Pepe is there, on-model (small head, pear body, heavy lids, smirk), and reposed for the action.
+- Pepe is there and on-model: the traced `pepe-officer.svg` asset, or a redraw that passes every item on the identity checklist in `pepe-ip.md` (cap and emblem, frown, side-eye, black tunic with rank plaque, belt buckle, boots, cape).
 - Pepe performs the core action, not decoration.
 - A new metaphor for this material, not a copy of an old example.
 - Strange, creative, interesting.
@@ -23,7 +23,7 @@ Run this on every picture before delivering it, whether Claude drew it or an ima
 - The main prop is built with construction parts and surface detail, ≥ 40 shapes.
 - Containers show thickness; contents sit inside them, behind their front wall.
 - Every paper, card, sign and screen has internal marks, varied.
-- Pepe has effort or reaction marks if the action involves effort.
+- Reaction marks around Pepe if the action involves effort or weight (dents, strain ticks, sweat drops).
 - At least 2 story details that reward a second look.
 - At 2x zoom: no broken joins, pointy artefacts, objects poking through each other, or labels crossing lines.
 - At least two render-review-fix rounds done, with weaknesses written down each round.
@@ -31,8 +31,8 @@ Run this on every picture before delivering it, whether Claude drew it or an ima
 ## Failure signs (redraw or fix)
 
 - A title in the top-left ("Common pitfalls", "Workflow", "System architecture", "Roadmap").
-- Pepe looks like a mascot, an emoji sticker or a cute cartoon, or has a different meme face.
-- Pepe in the unchanged standing pose next to the action.
+- Pepe looks like a mascot, an emoji sticker or a cute cartoon, has a different face (smile, crying), or has lost the uniform.
+- Pepe standing beside the action instead of being part of it, or inside the wobble filter (smeared).
 - Looks like a slide, a course page or a formal flowchart.
 - Too many elements, arrows or nodes. Or the opposite: too few, crude, bare-box props.
 - Text turning into explanatory paragraphs.

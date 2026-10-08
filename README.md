@@ -1,16 +1,16 @@
 # Pepe Illustrations
 
-Hand-drawn, slightly absurd 16:9 explainer pictures starring Pepe the frog, for articles, posts, docs and "how does this work" explanations. Packaged as a Claude skill.
+Hand-drawn, slightly absurd 16:9 explainer pictures starring Pepe the frog as a deadpan Imperial officer, for articles, posts, docs and "how does this work" explanations. Packaged as a Claude skill.
 
 Adapted from **[Ian Xiaohei Illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations)** by Ian. The original Chinese README is kept in [`README.original.zh.md`](README.original.zh.md). See [`NOTICE.md`](NOTICE.md).
 
-![Pepe sitting on an overstuffed "context" suitcase](pepe-illustrations/assets/svg-examples/01-context-wont-close.png)
+![Pepe the officer standing on an overstuffed "context" suitcase](pepe-illustrations/assets/svg-examples/01-context-wont-close.png)
 
 ## What changed from the original
 
-- **Pepe replaces 小黑** (the black blob) as the recurring character. The canonical drawing is [`pepe-illustrations/assets/pepe/pepe.svg`](pepe-illustrations/assets/pepe/pepe.svg).
+- **Pepe replaces 小黑** (the black blob) as the recurring character, as an Imperial officer. The canonical asset, [`pepe-officer.svg`](pepe-illustrations/assets/pepe/pepe-officer.svg), is an exact trace of the reference art (see [`tools/trace-character/`](tools/trace-character/) for the trace loop and its scores).
 - **Claude draws the pictures itself** as detailed SVG, renders them to PNG, looks at the result and revises. Image-generation tools (Canva, `image_gen`, etc.) are a fallback only.
-- **A hard detail floor** keeps the drawings at the level of the original artist's examples: built props, contents with marks, reposed character, story details, and at least two render-review rounds. `scripts/render.mjs` checks the shape count and palette.
+- **A hard detail floor** keeps the drawings at the level of the original artist's examples: built props, contents with marks, a character the action depends on, story details, and at least two render-review rounds. `scripts/render.mjs` checks the shape count and palette.
 - Instructions are in English. Labels follow the language of the source material, using the bundled Caveat (Latin) and Ma Shan Zheng (Chinese) handwriting fonts.
 
 ## Install
@@ -37,6 +37,7 @@ Each picture is saved as both SVG (editable) and PNG under `assets/<article-slug
 ## Layout
 
 ```text
+tools/trace-character/           # how the character SVG was traced, and how to redo it
 pepe-illustrations/
 ├── SKILL.md                     # workflow and the quality bar
 ├── package.json                 # playwright, for the renderer
@@ -49,7 +50,7 @@ pepe-illustrations/
 │   ├── qa-checklist.md
 │   └── prompt-template.md       # fallback image-generation prompts
 └── assets/
-    ├── pepe/                    # base Pepe asset (SVG + PNG)
+    ├── pepe/                    # Pepe officer asset (traced SVG + PNG)
     ├── svg-examples/            # worked SVG example at full detail
     ├── examples/                # original artist's raster examples (style calibration)
     └── fonts/                   # Caveat + Ma Shan Zheng (OFL)

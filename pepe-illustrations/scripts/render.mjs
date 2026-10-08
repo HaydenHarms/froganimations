@@ -53,7 +53,8 @@ async function loadChromium() {
 
 const svg = readFileSync(svgPath, 'utf8').replace(/<\?xml[^>]*\?>/, '');
 const font = (f) => pathToFileURL(join(fontsDir, f)).href;
-const html = `<!doctype html><html><head><meta charset="utf-8"><style>
+// <base> makes relative hrefs in the scene (e.g. <image href="pepe-officer.svg">) resolve next to the SVG file.
+const html = `<!doctype html><html><head><meta charset="utf-8"><base href="${pathToFileURL(dirname(svgPath)).href}/"><style>
 @font-face { font-family: 'Caveat'; src: url('${font('Caveat.ttf')}'); font-weight: 400 700; }
 @font-face { font-family: 'Ma Shan Zheng'; src: url('${font('MaShanZheng.ttf')}'); }
 html, body { margin: 0; background: #fff; }
@@ -66,7 +67,7 @@ const chromium = await loadChromium();
 const launchOpts = process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {};
 const browser = await chromium.launch(launchOpts);
 const page = await browser.newPage({ viewport: { width: 1600, height: 900 }, deviceScaleFactor: scale });
-await page.goto(pathToFileURL(htmlPath).href);
+await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'load' });
 await page.evaluate(async () => {
   await Promise.all([document.fonts.load('40px Caveat'), document.fonts.load("40px 'Ma Shan Zheng'", '图')]);
   await document.fonts.ready;
@@ -85,8 +86,9 @@ const report = await page.evaluate(() => {
     }
   });
   const fontsOk = document.fonts.check('40px Caveat');
+  const images = [...svg.querySelectorAll('image')].map((i) => i.getAttribute('href') || i.getAttribute('xlink:href'));
   const box = svg.getBoundingClientRect();
-  return { vb, shapeCount: shapes.length, texts, colors: [...colors], fontsOk, w: box.width, h: box.height };
+  return { vb, shapeCount: shapes.length, texts, colors: [...colors], fontsOk, images, w: box.width, h: box.height };
 });
 
 const el = await page.$('svg');
@@ -108,6 +110,10 @@ if (report.texts.length < 2) warnings.push('fewer than 2 handwritten labels');
 const off = report.colors.filter((c) => !ALLOWED.has(c));
 if (off.length) warnings.push(`colors outside the palette: ${off.join(', ')}`);
 if (!report.fontsOk) warnings.push('handwriting font did not load');
+if (!report.images.some((h) => /pepe-officer/.test(h || ''))) warnings.push('Pepe is missing: no <image href="pepe-officer.svg"> in the scene (or he was redrawn: check he is on-model)');
+for (const h of report.images) {
+  if (h && !h.startsWith('data:') && !existsSync(resolve(dirname(svgPath), h))) warnings.push(`image not found next to the scene: ${h}`);
+}
 
 console.log(`rendered ${basename(svgPath)} -> ${outPath}`);
 console.log(`shapes: ${report.shapeCount}   labels (${report.texts.length}): ${report.texts.map((t) => JSON.stringify(t)).join(' ')}`);

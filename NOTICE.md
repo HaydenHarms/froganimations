@@ -18,4 +18,6 @@ This repository adapts Ian Xiaohei Illustrations: the recurring character is rep
 
 Pepe the Frog was created by Matt Furie.
 
+The officer costume (uniform, rank plaque, cap emblem) evokes Imperial officers from Star Wars; Star Wars and its insignia are trademarks of Lucasfilm Ltd. This is a non-commercial fan adaptation with no affiliation.
+
 The bundled fonts in `pepe-illustrations/assets/fonts/` (Caveat, Ma Shan Zheng) are licensed under the SIL Open Font License; see `OFL.txt` in that folder.

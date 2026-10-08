@@ -16,15 +16,15 @@ Every scene starts from this. Don't change the canvas size, filter or palette.
       <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="11" result="n"/>
       <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
-    <!-- Pepe's eye clips, copied from assets/pepe/pepe.svg -->
-    <clipPath id="eyeL"><path d="M100 78 C110 64 136 62 146 74 C138 88 110 90 100 78 Z"/></clipPath>
-    <clipPath id="eyeR"><path d="M156 74 C166 60 194 58 204 70 C196 84 166 86 156 74 Z"/></clipPath>
   </defs>
   <rect width="1600" height="900" fill="#fff"/>
   <g filter="url(#wobble)" stroke="#1a1a1a" stroke-width="2.6"
      stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <!-- ground, props (back to front), Pepe, effort marks, annotations -->
+    <!-- ground, props (back to front), effort marks, annotations -->
   </g>
+  <!-- Pepe: the traced asset, outside the wobble so it stays crisp -->
+  <image href="pepe-officer.svg" x="X" y="Y" width="W" height="H"/>
+  <!-- anything that must sit in front of Pepe goes here, in its own wobble group -->
 </svg>
 ```
 
@@ -52,8 +52,7 @@ The `@import` only matters when the SVG is opened in a browser on its own. `scri
 | Orange | `#ef8a1f` | the main path or flow: arrows from A to B, the route |
 | Red | `#e0302a` | the problem, warning, emotional point or result |
 | Blue | `#2f6fd6` | secondary notes, system state, feedback loops, the "AI did this" note |
-| Pepe green | `#7fa23a`, crease `#3f5719`, outline `#1d2711` | Pepe only |
-| Pepe lips | `#c26a3d` | Pepe only |
+| Pepe | the asset's own colours (see `pepe-ip.md`) | Pepe only. The `<image>` isn't counted by the palette check |
 
 Colour is scarce. Usually 1 orange path, 1 red note, 0-1 blue note. Blue is optional.
 
@@ -74,7 +73,7 @@ A finished scene must meet all of these. `render.mjs` checks the shape count; yo
 - **Every container shows thickness** (an inner rim or a second face).
 - **Every paper, card, screen or sign has internal marks**: 2-4 text lines, or an icon (image frame with a mountain, `< / >`, chart bars, a dot ellipsis, a check). Vary them; no two identical neighbours.
 - **≥ 5 small contents items** when the idea involves "stuff" (information, tasks, messages): papers, bubbles, cards, at different rotations, overlapping naturally.
-- **Pepe is reposed** for the action (see `pepe-ip.md`) and has **effort or reaction marks** where it fits: sweat drops, strain ticks by the hands, motion lines, a little dust puff.
+- **Pepe is placed so the action depends on him** (see `pepe-ip.md`), with **reaction marks** around him where it fits: the lid denting under his boots, strain ticks, sweat drops, a dust puff.
 - **≥ 2 story details**: a tag, sticker, stray item on the floor, a dent, a mid-fall sheet with a dotted trail.
 - **Ground cues**: a few short broken ground strokes under objects that stand on something. Never a full-width ground line.
 - **2-8 handwritten labels**, each 1-4 words (2-8 Chinese characters). Plus any text that is part of a prop (a tag reading "200K") counts toward the 8.
@@ -84,7 +83,7 @@ A finished scene must meet all of these. `render.mjs` checks the shape count; yo
 - Rectangles with a word inside standing in for props.
 - Arrows between boxes doing all the explaining.
 - Blank papers, blank screens, empty containers.
-- Pepe in the unchanged standing base pose next to the action.
+- Pepe standing beside the action instead of being part of it.
 - Perfectly symmetric, evenly spaced layouts.
 - One render delivered without looking at it.
 - Fewer, bigger shapes to "keep it minimal". Minimal means few *ideas* and lots of empty space. The things that are drawn are still drawn properly.
@@ -140,5 +139,7 @@ After every render:
 
 ## 8. Placing Pepe
 
-See `pepe-ip.md`. In short: copy the groups from `assets/pepe/pepe.svg` into a
-`<g transform="translate(X Y) scale(S)" stroke="#1d2711" stroke-width="3.6">` (S is usually 0.5-0.75), redraw the arms and legs for the action, and raise the crease stroke widths to about 3 so they survive the downscale.
+See `pepe-ip.md`. In short: copy `assets/pepe/pepe-officer.svg` next to the scene, then add
+`<image href="pepe-officer.svg" x="X" y="Y" width="W" height="1.5*W"/>` after the props he stands on or in front of, and outside the wobble group. For boots at (fx, fy) with height H: `S = H/1536`, `X = fx - 590*S`, `Y = fy - 1495*S`. Usually H is 280-380.
+
+The worked example puts his boots on the suitcase lid at (600, 474) with H = 340, and adds a dent line and strain ticks under him.
