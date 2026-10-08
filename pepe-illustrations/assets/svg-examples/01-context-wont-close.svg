@@ -1,0 +1,285 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <title>Context won't close</title>
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&amp;family=Ma+Shan+Zheng&amp;display=swap');</style>
+    <filter id="wobble" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <clipPath id="eyeL"><path d="M100 78 C110 64 136 62 146 74 C138 88 110 90 100 78 Z"/></clipPath>
+    <clipPath id="eyeR"><path d="M156 74 C166 60 194 58 204 70 C196 84 166 86 156 74 Z"/></clipPath>
+  </defs>
+  <rect width="1600" height="900" fill="#fff"/>
+  <g filter="url(#wobble)" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+
+  <!-- ===== ground ===== -->
+  <g stroke="#1a1a1a" stroke-width="2">
+    <path d="M300 752 L360 752 M380 754 L470 753 M760 752 L880 750 M900 748 L960 748"/>
+    <path d="M1080 708 L1150 708 M1380 707 L1440 707"/>
+  </g>
+
+  <!-- ===== the suitcase (context window) ===== -->
+  <!-- right side face -->
+  <path fill="#fff" d="M850 512 L922 460 L922 690 C922 700 916 708 908 714 L850 742 Z"/>
+  <path d="M868 520 L868 726 M886 508 L886 716 M904 494 L904 705" stroke-width="1.4"/>
+  <!-- top face (lid top), bulging up -->
+  <path fill="#fff" d="M352 498 C344 476 360 462 404 448 C540 418 760 418 900 444 C922 450 930 458 922 466 L850 516 C700 494 500 492 352 498 Z"/>
+  <!-- front face, bulging above the zipper -->
+  <path fill="#fff" d="M352 498 C500 488 700 492 850 516 L850 716 C850 732 840 742 824 742 L356 742 C340 742 330 732 330 716 L330 530 C330 512 340 500 352 498 Z"/>
+  <!-- stitching around the front face -->
+  <path d="M352 520 C500 510 700 514 830 534 L830 708 C830 716 826 722 818 722 L360 722 C354 722 350 716 350 708 Z" stroke-width="1.3" stroke-dasharray="7 7"/>
+
+  <!-- zipper seam, splitting open in the middle -->
+  <path d="M330 600 C430 596 450 600 470 598 M760 606 C800 608 830 610 850 612 L922 560" stroke-width="2.4"/>
+  <path d="M470 598 C540 586 620 584 760 606" stroke-width="2"/>
+  <path d="M470 598 C540 616 640 622 760 606" stroke-width="2"/>
+  <path d="M336 594 L336 604 M342 596 L342 606 M347 594 L347 604 M353 596 L353 606 M358 594 L358 604 M364 596 L364 606 M370 594 L370 604 M375 596 L375 606 M381 594 L381 604 M386 596 L386 606 M392 594 L392 604 M398 596 L398 606 M403 594 L403 604 M409 596 L409 606 M414 594 L414 604 M420 596 L420 606 M426 594 L426 604 M431 596 L431 606 M437 594 L437 604 M442 596 L442 606 M448 594 L448 604 M454 596 L454 606 M459 594 L459 604 M465 596 L465 606 M766 602 L766 612 M772 604 L772 614 M777 603 L777 613 M783 606 L783 616 M788 604 L788 614 M794 606 L794 616 M800 605 L800 615 M805 608 L805 618 M811 606 L811 616 M816 608 L816 618 M822 607 L822 617 M828 610 L828 620 M833 608 L833 618 M839 610 L839 620 M844 609 L844 619 M854 608 L857 616 M859 604 L862 612 M864 600 L867 608 M870 597 L873 605 M875 593 L878 601 M880 589 L883 597 M885 585 L888 593 M890 581 L893 589 M896 578 L899 586 M901 574 L904 582 M906 570 L909 578 M911 566 L914 574 M916 562 L919 570" stroke-width="1.4"/>
+  <g>
+    <rect x="874" y="584" width="13" height="30" rx="5" fill="#fff" transform="rotate(-30 880 598)"/>
+    <circle cx="884" cy="592" r="3" fill="#fff" stroke-width="1.4"/>
+  </g>
+  <!-- strap -->
+  <path fill="#fff" d="M432 496 L462 495 L462 742 L432 742 Z"/>
+  <path fill="#fff" d="M432 496 C452 470 488 452 492 436 L518 436 C514 452 482 472 462 495 Z"/>
+  <path d="M437 506 L437 736 M457 506 L457 736" stroke-width="1.1" stroke-dasharray="5 6"/>
+  <rect x="426" y="652" width="42" height="34" rx="4" fill="#fff"/>
+  <rect x="433" y="659" width="28" height="20" rx="2" fill="#fff" stroke-width="1.6"/>
+  <path d="M447 659 L447 679" stroke-width="2"/>
+  <circle cx="447" cy="700" r="2.6" fill="#1a1a1a" stroke="none"/>
+  <circle cx="447" cy="714" r="2.6" fill="#1a1a1a" stroke="none"/>
+  <circle cx="447" cy="728" r="2.6" fill="#1a1a1a" stroke="none"/>
+  <!-- strap -->
+  <path fill="#fff" d="M712 496 L742 495 L742 742 L712 742 Z"/>
+  <path fill="#fff" d="M712 496 C732 470 770 452 774 436 L800 436 C796 452 762 472 742 495 Z"/>
+  <path d="M717 506 L717 736 M737 506 L737 736" stroke-width="1.1" stroke-dasharray="5 6"/>
+  <rect x="706" y="652" width="42" height="34" rx="4" fill="#fff"/>
+  <rect x="713" y="659" width="28" height="20" rx="2" fill="#fff" stroke-width="1.6"/>
+  <path d="M727 659 L727 679" stroke-width="2"/>
+  <circle cx="727" cy="700" r="2.6" fill="#1a1a1a" stroke="none"/>
+  <circle cx="727" cy="714" r="2.6" fill="#1a1a1a" stroke="none"/>
+  <circle cx="727" cy="728" r="2.6" fill="#1a1a1a" stroke="none"/>
+  <!-- side handle on the right face, with the luggage tag -->
+  <path d="M872 548 C860 560 860 616 872 628" stroke-width="7"/>
+  <path d="M872 548 C860 560 860 616 872 628" stroke-width="3" stroke="#fff"/>
+  <rect x="866" y="538" width="14" height="16" rx="3" fill="#fff" transform="rotate(-36 873 546)"/>
+  <rect x="866" y="622" width="14" height="16" rx="3" fill="#fff" transform="rotate(-36 873 630)"/>
+  <path d="M864 590 C900 600 940 610 972 606" stroke-width="1.6"/>
+  <g transform="rotate(10 1020 606)">
+    <path fill="#fff" d="M968 606 L984 592 L1066 592 L1066 640 L984 640 L968 626 Z"/>
+    <circle cx="980" cy="616" r="4" fill="#fff" stroke-width="1.6"/>
+    <path d="M992 632 L1056 632" stroke-width="1.2"/>
+    <text x="994" y="626" font-size="34" fill="#1a1a1a" stroke="none" font-family="Caveat, 'Ma Shan Zheng', cursive" font-weight="600">200K</text>
+  </g>
+  <!-- round sticker + brand plate on the front -->
+  <circle cx="384" cy="664" r="26" fill="#fff"/>
+  <circle cx="384" cy="664" r="20" fill="#fff" stroke-width="1.2" stroke-dasharray="3 4"/>
+  <path d="M388 648 L376 666 L386 666 L380 682 L394 660 L384 660 Z" fill="#fff" stroke-width="1.6"/>
+  <rect x="548" y="676" width="104" height="26" rx="6" fill="#fff"/>
+  <circle cx="558" cy="689" r="2.2" fill="#1a1a1a" stroke="none"/><circle cx="642" cy="689" r="2.2" fill="#1a1a1a" stroke="none"/>
+  <path d="M572 689 L628 689" stroke-width="1.6"/>
+  <!-- stress lines on the over-stuffed lid -->
+  <path d="M384 470 C396 462 410 458 420 458 M820 452 C840 454 860 458 872 462 M540 452 C560 446 580 444 592 444" stroke-width="1.3"/>
+
+  <!-- corner guards -->
+  <path fill="#fff" d="M330 700 L330 720 C330 734 340 742 354 742 L374 742 L374 732 L360 732 C346 732 340 726 340 712 L340 700 Z"/>
+  <path fill="#fff" d="M806 742 L826 742 C840 742 850 734 850 720 L850 700 L840 700 L840 712 C840 726 834 732 820 732 L806 732 Z"/>
+  <path fill="#fff" d="M908 700 L922 690 L922 676 L912 683 L912 696 Z"/>
+  <!-- wheels -->
+  <circle cx="372" cy="752" r="11" fill="#fff"/><circle cx="372" cy="752" r="3.5" fill="#1a1a1a" stroke="none"/>
+  <circle cx="808" cy="752" r="11" fill="#fff"/><circle cx="808" cy="752" r="3.5" fill="#1a1a1a" stroke="none"/>
+  <circle cx="900" cy="724" r="10" fill="#fff"/><circle cx="900" cy="724" r="3" fill="#1a1a1a" stroke="none"/>
+  <!-- strain marks where the seam is splitting -->
+  <path d="M500 576 L494 566 M520 572 L518 560 M700 576 L706 566 M724 582 L734 574" stroke-width="1.6"/>
+
+  <!-- context spilling out of the seam: docs, chats, code, images -->
+  <g transform="translate(486 560) rotate(-28)">
+    <path fill="#fff" d="M0 0 L48 0 L62 14 L62 78 L0 78 Z"/>
+    <path d="M48 0 L48 14 L62 14" stroke-width="1.4"/>
+    <path d="M9 22 L50 22 M9 34 L53 34 M9 46 L44 46 M9 58 L38 58" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(536 566) rotate(-8)">
+    <path fill="#fff" d="M0 0 L48 0 L62 14 L62 78 L0 78 Z"/>
+    <path d="M48 0 L48 14 L62 14" stroke-width="1.4"/>
+    <path d="M14 30 L8 38 L14 46 M48 30 L54 38 L48 46 M36 28 L26 50" stroke-width="1.6"/>
+    <path d="M9 60 L42 60 M16 68 L50 68" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(592 582) rotate(6)">
+    <path fill="#fff" d="M10 0 L60 0 C70 0 70 4 70 10 L70 34 C70 40 66 44 60 44 L26 44 L12 56 L14 44 L10 44 C4 44 0 40 0 34 L0 10 C0 4 4 0 10 0 Z"/>
+    <circle cx="21" cy="22.0" r="3" fill="#1a1a1a" stroke="none"/><circle cx="35" cy="22.0" r="3" fill="#1a1a1a" stroke="none"/><circle cx="49" cy="22.0" r="3" fill="#1a1a1a" stroke="none"/>
+  </g>
+  <g transform="translate(668 574) rotate(18)">
+    <path fill="#fff" d="M0 0 L48 0 L62 14 L62 78 L0 78 Z"/>
+    <path d="M48 0 L48 14 L62 14" stroke-width="1.4"/>
+    <rect x="8" y="20" width="46" height="34" fill="#fff" stroke-width="1.4"/>
+    <path d="M12 50 L24 36 L32 44 L40 32 L50 50" stroke-width="1.4"/><circle cx="44" cy="28" r="3.5" stroke-width="1.3"/>
+    <path d="M9 64 L48 64" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(712 582) rotate(34)">
+    <path fill="#fff" d="M0 0 L40 0 L54 14 L54 66 L0 66 Z"/>
+    <path d="M40 0 L40 14 L54 14" stroke-width="1.4"/>
+    <path d="M9 22 L42 22 M9 34 L45 34 M9 46 L36 46 M9 58 L30 58" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(440 574) rotate(-40)">
+    <path fill="#fff" d="M10 0 L48 0 C58 0 58 4 58 10 L58 26 C58 32 54 36 48 36 L26 36 L12 48 L14 36 L10 36 C4 36 0 32 0 26 L0 10 C0 4 4 0 10 0 Z"/>
+    <circle cx="15" cy="18.0" r="3" fill="#1a1a1a" stroke="none"/><circle cx="29" cy="18.0" r="3" fill="#1a1a1a" stroke="none"/><circle cx="43" cy="18.0" r="3" fill="#1a1a1a" stroke="none"/>
+  </g>
+  <g transform="translate(916 520) rotate(52)">
+    <path fill="#fff" d="M0 0 L34 0 L48 14 L48 60 L0 60 Z"/>
+    <path d="M34 0 L34 14 L48 14" stroke-width="1.4"/>
+    <path d="M9 22 L36 22 M9 34 L39 34 M9 46 L30 46 M9 58 L24 58" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(930 586) rotate(70)">
+    <path fill="#fff" d="M10 0 L44 0 C54 0 54 4 54 10 L54 24 C54 30 50 34 44 34 L26 34 L12 46 L14 34 L10 34 C4 34 0 30 0 24 L0 10 C0 4 4 0 10 0 Z"/>
+    <circle cx="13" cy="17.0" r="3" fill="#1a1a1a" stroke="none"/><circle cx="27" cy="17.0" r="3" fill="#1a1a1a" stroke="none"/><circle cx="41" cy="17.0" r="3" fill="#1a1a1a" stroke="none"/>
+  </g>
+  <g transform="translate(268 690) rotate(-74)">
+    <path fill="#fff" d="M0 0 L44 0 L58 14 L58 72 L0 72 Z"/>
+    <path d="M44 0 L44 14 L58 14" stroke-width="1.4"/>
+    <path d="M14 30 L8 38 L14 46 M44 30 L50 38 L44 46 M34 28 L24 50" stroke-width="1.6"/>
+    <path d="M9 60 L38 60 M16 68 L46 68" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(960 676) rotate(96)">
+    <path fill="#fff" d="M0 0 L36 0 L50 14 L50 64 L0 64 Z"/>
+    <path d="M36 0 L36 14 L50 14" stroke-width="1.4"/>
+    <path d="M9 22 L38 22 M9 34 L41 34 M9 46 L32 46 M9 58 L26 58" stroke-width="1.4"/>
+  </g>
+  <path d="M240 650 C246 664 250 668 258 670 M988 640 C992 650 990 660 984 668" stroke-width="1.4" stroke-dasharray="3 6"/>
+
+  <!-- ===== Pepe: sitting on the lid, pressing it shut ===== -->
+  <g transform="translate(498 206) scale(0.68)" stroke="#1d2711" stroke-width="3.6">
+    <!-- sitting legs: thighs on the lid, knees over the front edge, short shins hanging -->
+    <path fill="#7fa23a" d="M84 372 C66 398 74 430 94 440 C90 470 92 496 96 518 L76 530 L92 532 L84 546 L104 538 L112 550 L120 534 L136 538 C130 512 130 476 134 440 C146 422 142 388 126 374 Z"/>
+    <path fill="#7fa23a" d="M216 372 C234 398 226 430 206 440 C210 470 208 496 204 518 L224 530 L208 532 L216 546 L196 538 L188 550 L180 534 L164 538 C170 512 170 476 166 440 C154 422 158 388 174 374 Z"/>
+    <path d="M98 436 C108 444 122 444 130 436 M202 436 C192 444 178 444 170 436" stroke="#3f5719" stroke-width="3"/>
+
+      <!-- ===== body: tall pear, big belly ===== -->
+      <path fill="#7fa23a" d="
+        M100 128
+        C84 136 72 152 68 176
+        C56 210 50 250 54 290
+        C58 340 82 386 150 388
+        C214 390 246 344 248 292
+        C252 248 244 206 232 176
+        C226 152 214 136 200 128 Z"/>
+      <!-- belly underline and navel crease -->
+      <path d="M84 312 C100 352 200 356 222 312" stroke="#3f5719" stroke-width="3"/>
+      <path d="M146 318 C150 322 154 322 156 318" stroke="#3f5719" stroke-width="3"/>
+      <!-- chest / armpit creases -->
+      <path d="M92 176 C100 186 104 196 104 206" stroke="#3f5719" stroke-width="3"/>
+      <path d="M208 176 C200 186 196 196 196 206" stroke="#3f5719" stroke-width="3"/>
+      <!-- leg crease where thigh meets belly -->
+      <path d="M150 372 L150 388" stroke="#3f5719" stroke-width="3"/>
+    <!-- arms: locked straight, palms flat on the lid -->
+    <path fill="#7fa23a" d="M98 168 C70 176 46 260 34 360 C32 380 30 396 26 410 L10 418 L24 420 L14 430 L32 426 L30 438 L44 426 L50 434 L52 418 C54 400 56 380 58 360 C64 290 80 226 100 200 C108 188 106 172 98 168 Z"/>
+    <path fill="#7fa23a" d="M202 168 C230 176 254 260 266 360 C268 380 270 396 274 410 L290 418 L276 420 L286 430 L268 426 L270 438 L256 426 L250 434 L248 418 C246 400 244 380 242 360 C236 290 220 226 200 200 C192 188 194 172 202 168 Z"/>
+
+      <!-- ===== head: small, two eye bumps on top ===== -->
+      <path fill="#7fa23a" d="
+        M86 120
+        C78 104 80 84 92 70
+        C94 50 124 40 146 54
+        C160 40 196 42 210 66
+        C222 82 222 104 214 120
+        C204 140 176 148 150 148
+        C122 148 96 140 86 120 Z"/>
+      <!-- side-of-head ear ridge -->
+      <path d="M86 92 C80 96 80 104 86 108" stroke="#3f5719" stroke-width="3"/>
+
+      <!-- brow creases -->
+      <path d="M102 62 C114 54 132 54 142 60" stroke="#3f5719" stroke-width="3"/>
+      <path d="M160 58 C172 50 190 50 200 56" stroke="#3f5719" stroke-width="3"/>
+
+      <!-- eye whites -->
+      <path fill="#fff" d="M100 78 C110 64 136 62 146 74 C138 88 110 90 100 78 Z"/>
+      <path fill="#fff" d="M156 74 C166 60 194 58 204 70 C196 84 166 86 156 74 Z"/>
+      <!-- pupils + highlights -->
+      <g clip-path="url(#eyeL)" stroke="none">
+        <circle cx="126" cy="78" r="8.5" fill="#111"/>
+        <circle cx="123" cy="74.5" r="2.6" fill="#fff"/>
+        <circle cx="129" cy="81" r="1.2" fill="#fff"/>
+      </g>
+      <g clip-path="url(#eyeR)" stroke="none">
+        <circle cx="184" cy="74" r="8.5" fill="#111"/>
+        <circle cx="181" cy="70.5" r="2.6" fill="#fff"/>
+        <circle cx="187" cy="77" r="1.2" fill="#fff"/>
+      </g>
+      <!-- heavy droopy lids -->
+      <g clip-path="url(#eyeL)">
+        <path fill="#7fa23a" stroke="none" d="M94 56 L152 56 L152 72 C138 66 114 66 94 74 Z"/>
+      </g>
+      <g clip-path="url(#eyeR)">
+        <path fill="#7fa23a" stroke="none" d="M150 52 L210 52 L210 68 C196 62 172 62 150 70 Z"/>
+      </g>
+      <path d="M96 75 C112 66 136 64 150 71" stroke-width="2.6"/>
+      <path d="M152 71 C168 62 194 60 208 67" stroke-width="2.6"/>
+      <path d="M100 78 C110 64 136 62 146 74 C138 88 110 90 100 78 Z" stroke-width="2"/>
+      <path d="M156 74 C166 60 194 58 204 70 C196 84 166 86 156 74 Z" stroke-width="2"/>
+      <!-- under-eye bags -->
+      <path d="M106 90 C118 96 136 95 144 88" stroke="#3f5719" stroke-width="2.6"/>
+      <path d="M162 86 C174 92 192 91 200 84" stroke="#3f5719" stroke-width="2.6"/>
+
+      <!-- lips: wide, thin, smug smirk (right corner pulled higher) -->
+      <path fill="#c26a3d" d="
+        M94 110
+        C114 120 166 122 210 102
+        C214 100 218 103 215 107
+        C196 128 168 136 136 134
+        C114 132 98 124 92 116
+        C90 112 91 109 94 110 Z"/>
+      <path d="M96 113 C122 126 172 126 212 105" stroke-width="2"/>
+      <!-- smirk dimple at the high corner -->
+      <path d="M209 97 C215 99 217 104 215 110" stroke="#3f5719" stroke-width="2.6"/>
+  </g>
+  <!-- effort marks -->
+  <path d="M546 226 C540 234 540 242 546 244 C552 242 552 234 546 226 Z" fill="#fff" stroke-width="1.6"/>
+  <path d="M526 250 C521 256 521 262 526 264 C531 262 531 256 526 250 Z" fill="#fff" stroke-width="1.6"/>
+  <path d="M506 484 L492 478 M506 496 L490 498 M694 484 L708 476 M694 496 L712 496" stroke-width="1.8"/>
+  <path d="M690 228 L704 216 M698 244 L716 238" stroke-width="1.8"/>
+
+  <!-- ===== the small tray of what actually fits ===== -->
+  <path fill="#fff" d="M1090 610 L1110 590 L1410 590 L1390 610 Z"/>
+  <g transform="translate(1112 540) rotate(0)">
+    <path fill="#fff" d="M0 0 L58 0 L72 14 L72 88 L0 88 Z"/>
+    <path d="M58 0 L58 14 L72 14" stroke-width="1.4"/>
+    <path d="M9 22 L60 22 M9 34 L63 34 M9 46 L54 46 M9 58 L48 58" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(1206 536) rotate(0)">
+    <path fill="#fff" d="M0 0 L58 0 L72 14 L72 88 L0 88 Z"/>
+    <path d="M58 0 L58 14 L72 14" stroke-width="1.4"/>
+    <path d="M14 30 L8 38 L14 46 M58 30 L64 38 L58 46 M41 28 L31 50" stroke-width="1.6"/>
+    <path d="M9 60 L52 60 M16 68 L60 68" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(1300 540) rotate(3)">
+    <path fill="#fff" d="M0 0 L58 0 L72 14 L72 88 L0 88 Z"/>
+    <path d="M58 0 L58 14 L72 14" stroke-width="1.4"/>
+    <rect x="8" y="20" width="56" height="34" fill="#fff" stroke-width="1.4"/>
+    <path d="M12 50 L24 36 L32 44 L40 32 L60 50" stroke-width="1.4"/><circle cx="54" cy="28" r="3.5" stroke-width="1.3"/>
+    <path d="M9 64 L58 64" stroke-width="1.4"/>
+  </g>
+  <path fill="#fff" d="M1090 610 L1390 610 L1390 690 C1390 698 1384 704 1376 704 L1104 704 C1096 704 1090 698 1090 690 Z"/>
+  <path fill="#fff" d="M1390 610 L1410 590 L1410 670 C1410 678 1406 684 1400 688 L1390 696 Z"/>
+  <path d="M1102 622 L1378 622" stroke-width="1.3"/>
+  <rect x="1206" y="648" width="68" height="26" rx="4" fill="#fff" stroke-width="1.6"/>
+  <path d="M1216 661 L1264 661" stroke-width="1.2"/>
+  <path d="M1110 640 C1110 632 1126 632 1126 640 M1354 640 C1354 632 1370 632 1370 640" stroke-width="1.6"/>
+  <!-- tiny check marks on the kept cards -->
+  <path d="M1140 528 L1148 536 L1162 518 M1234 524 L1242 532 L1256 514 M1330 528 L1338 536 L1352 518" stroke-width="2"/>
+
+  <!-- ===== annotations ===== -->
+  <!-- main flow: orange -->
+  <path d="M960 470 C1040 380 1180 380 1240 500" stroke="#ef8a1f" stroke-width="3.2"/>
+  <path d="M1222 486 L1241 504 L1248 478" stroke="#ef8a1f" stroke-width="3.2"/>
+  <text x="1046" y="372" font-size="48" fill="#2f6fd6" font-family="Caveat, 'Ma Shan Zheng', cursive" font-weight="600" stroke="none">summarize</text>
+  <!-- the problem: red -->
+  <text x="150" y="530" font-size="48" fill="#e0302a" font-family="Caveat, 'Ma Shan Zheng', cursive" font-weight="600" stroke="none">won't close</text>
+  <path d="M290 540 C340 560 380 570 430 578" stroke="#e0302a" stroke-width="2.6"/>
+  <path d="M414 566 L432 578 L414 590" stroke="#e0302a" stroke-width="2.6"/>
+  <!-- names: black -->
+  <text x="236" y="400" font-size="52" fill="#1a1a1a" font-family="Caveat, 'Ma Shan Zheng', cursive" font-weight="600" stroke="none">context</text>
+  <path d="M330 412 C350 432 360 450 368 470" stroke="#1a1a1a" stroke-width="2.2"/>
+  <path d="M356 460 L369 474 L376 456" stroke="#1a1a1a" stroke-width="2.2"/>
+  <text x="1176" y="786" font-size="48" fill="#1a1a1a" font-family="Caveat, 'Ma Shan Zheng', cursive" font-weight="600" stroke="none">what fits</text>
+  <path d="M1250 744 L1250 716 M1240 728 L1250 714 L1260 728" stroke="#1a1a1a" stroke-width="2.2"/>
+
+  </g>
+</svg>

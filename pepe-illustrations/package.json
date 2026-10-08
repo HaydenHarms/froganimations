@@ -1,0 +1,12 @@
+{
+  "name": "pepe-illustrations",
+  "private": true,
+  "description": "Renderer for the pepe-illustrations skill: SVG scene -> PNG with bundled handwriting fonts.",
+  "type": "module",
+  "scripts": {
+    "render": "node scripts/render.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.56.1"
+  }
+}
